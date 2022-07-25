@@ -1,0 +1,69 @@
+{
+  "slotDetails": [
+    {
+      "visa_location": "CHENNAI",
+      "slots": 0,
+      "createdon": "Thu, 23 Jun 2022 09:41:35 GMT",
+      "slotDetails": "[{\"location\": \"CHENNAI\"}]"
+    },
+    {
+      "visa_location": "CHENNAI VAC",
+      "slots": 26,
+      "createdon": "Thu, 23 Jun 2022 09:40:53 GMT",
+      "start_date": "15 Jul 2022"
+    },
+    {
+      "visa_location": "HYDERABAD",
+      "slots": 0,
+      "createdon": "Thu, 23 Jun 2022 09:41:45 GMT",
+      "slotDetails": "[{\"location\": \"HYDERABAD\"}]"
+    },
+    {
+      "visa_location": "HYDERABAD VAC",
+      "slots": 18,
+      "createdon": "Thu, 23 Jun 2022 09:42:22 GMT",
+      "start_date": "19 Jul 2022"
+    },
+    {
+      "visa_location": "KOLKATA",
+      "slots": 0,
+      "createdon": "Thu, 23 Jun 2022 09:41:28 GMT",
+      "slotDetails": "[{\"location\": \"KOLKATA\"}]"
+    },
+    {
+      "visa_location": "KOLKATA VAC",
+      "slots": 26,
+      "createdon": "Thu, 23 Jun 2022 09:37:11 GMT",
+      "start_date": "11 Jul 2022"
+    },
+    {
+      "visa_location": "MUMBAI",
+      "slots": 0,
+      "createdon": "Thu, 23 Jun 2022 09:41:24 GMT",
+      "slotDetails": "[{\"location\": \"MUMBAI\"}]"
+    },
+    {
+      "visa_location": "MUMBAI VAC",
+      "slots": 28,
+      "createdon": "Thu, 23 Jun 2022 09:36:19 GMT",
+      "start_date": "12 Jul 2022"
+    },
+    {
+      "visa_location": "NEW DELHI",
+      "slots": 0,
+      "createdon": "Thu, 23 Jun 2022 09:41:39 GMT",
+      "slotDetails": "[{\"location\": \"NEW DELHI\"}]"
+    },
+    {
+      "visa_location": "NEW DELHI VAC",
+      "slots": 24,
+      "createdon": "Thu, 23 Jun 2022 09:42:27 GMT",
+      "start_date": "14 Jul 2022"
+    }
+  ],
+  "userDetails": {
+    "visa_type": "F-1",
+    "appointment_type": "Regular",
+    "subscription": "subscribed"
+  }
+}
