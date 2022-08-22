@@ -56,19 +56,18 @@ namespace ConsoleApp4
                 var yD = y.StartDate ?? DateTime.MaxValue;
                 return DateTime.Compare(xD, yD);
             });
-            var endDate = new DateTime(2022, 08, 25);
-            var nearbyVacSlots = visaSlotsDetails.SlotDetails.Where(s => s.VisaLocation.Contains("VAC") && s.StartDate != null && s.StartDate <= endDate).ToList();
-            var subject = nearbyVacSlots.Format(" |");
+            var subject = visaSlotsDetails.SlotDetails.Format(" |");
             var message = visaSlotsDetails.SlotDetails.Format("\n");
             var header = $"Interval: {_currentInterval} Minutes" + $"\n\nTime: {DateTime.Now:g},\n\n";
             Console.WriteLine(header + message);
             GeneralBot.Send(header + message, subject);
-            if (nearbyVacSlots.Count > 0)
+            var vacLocations = visaSlotsDetails.SlotDetails.Where(x => x.VisaLocation.Contains("VAC"));
+            var pairs = vacLocations.Select(x => new KeyValuePair<SlotDetail, SlotDetail>(x, visaSlotsDetails.SlotDetails.FirstOrDefault(y => y.VisaLocation.Equals(x.VisaLocation.Substring(0, x.VisaLocation.LastIndexOf(' ')))))).ToList();
+            var requiredLocations = new[] { "HYDERABAD", "CHENNAI" };
+            var earlyVacDate = pairs.Min(x => x.Key.StartDate);
+            if (pairs.Where(x=> requiredLocations.Contains(x.Value?.VisaLocation)&&(earlyVacDate<x.Value?.StartDate)).Count()>0)
             {
-                if (HistoryManager.StoreAndVerify(visaSlotsDetails, nearbyVacSlots.Min(x => x.StartDate ?? DateTime.MaxValue)))
-                    PriorityNotificationBot.Send("Priority Notification!\n" + message);
-                else
-                    PriorityNotificationBot.Send(message);
+                PriorityNotificationBot.Send(message);
             }
         }
     }

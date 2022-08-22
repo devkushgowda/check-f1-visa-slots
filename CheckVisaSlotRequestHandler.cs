@@ -17,7 +17,7 @@ namespace ConsoleApp4
     public static class CheckVisaSlotRequestHandler
     {
 
-        public const string AccessCode = "3JRXQ1";
+        public const string AccessCode = "AY4LJW";
         public static CheckMyVisaSlotResponse Get()
         {
             return JsonConvert.DeserializeObject<CheckMyVisaSlotResponse>(_Get());
